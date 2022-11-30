@@ -178,13 +178,6 @@ The following environment variables are supported:
    To get the current value from a running system, look in
    `/etc/timezone`.
 
- * `FIRST_USER_NAME` (Default: `pi`)
-
-   Username for the first user. This user only exists during the image creation process. Unless
-   `DISABLE_FIRST_BOOT_USER_RENAME` is set to `1`, this user will be renamed on the first boot with
-   a name chosen by the final user. This security feature is designed to prevent shipping images
-   with a default username and help prevent malicious actors from taking over your devices.
-
  * `FIRST_USER_PASS` (Default: unset)
 
    Password for the first user. If unset, the account is locked.
