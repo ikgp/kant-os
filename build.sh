@@ -256,8 +256,6 @@ export PREV_STAGE_DIR
 export ROOTFS_DIR
 export PREV_ROOTFS_DIR
 export IMG_SUFFIX
-export NOOBS_NAME
-export NOOBS_DESCRIPTION
 export EXPORT_DIR
 export EXPORT_ROOTFS_DIR
 
@@ -403,20 +401,6 @@ for EXPORT_DIR in ${EXPORT_DIRS}; do
 
 	else
 		run_stage
-	fi
-	if [ "${USE_QEMU}" != "1" ]; then
-		if [ -e "${EXPORT_DIR}/EXPORT_NOOBS" ]; then
-			# shellcheck source=/dev/null
-			source "${EXPORT_DIR}/EXPORT_NOOBS"
-			STAGE_DIR="${BASE_DIR}/export-noobs"
-			if [ "${USE_QCOW2}" = "1" ]; then
-				USE_QCOW2=0
-				run_stage
-				USE_QCOW2=1
-			else
-				run_stage
-			fi
-		fi
 	fi
 done
 
